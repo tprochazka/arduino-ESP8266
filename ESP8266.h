@@ -279,6 +279,7 @@ public:
     int read();
     int read(char* buffer, size_t size);
     int read(uint8_t* buffer, size_t size);
+	void skipDataBlock();
 
     // Peek
     int peek();

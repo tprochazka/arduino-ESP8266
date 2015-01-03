@@ -600,6 +600,12 @@ int ESP8266::read(uint8_t* buffer, size_t size)
     return -1;
 }
 
+// will skip all rest data in current data block, next available() call will read next one
+void ESP8266::skipDataBlock()
+{
+    	_available = 0;
+}
+
 int ESP8266::peek()
 {
     if (_available > 0) {
